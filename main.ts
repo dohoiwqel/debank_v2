@@ -1,5 +1,5 @@
 import axios from 'axios'
-import HttpsProxyAgent from 'https-proxy-agent'
+import {HttpsProxyAgent} from 'https-proxy-agent'
 import * as readline from 'readline'
 import * as fs from 'fs'
 
@@ -20,7 +20,7 @@ class Checker {
     
     getProxy(proxy: string) {
         const [ip, port, username, password] = proxy.split(':')
-        return new HttpsProxyAgent.HttpsProxyAgent(`http://${username}:${password}@${ip}:${port}`)
+        return new HttpsProxyAgent(`http://${username}:${password}@${ip}:${port}`)
     }
 
     async getBalance(wallet: string): Promise<number> {
@@ -64,7 +64,7 @@ class Checker {
         } catch(e: any) {
             this.proxyNumber++
             if(e.response.data.includes('429')) console.log('Too Many Requests');
-            await this.sleep(10)
+            await this.sleep(5)
             return await this.getBalance(wallet)
         }
     }
