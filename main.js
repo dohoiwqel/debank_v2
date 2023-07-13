@@ -197,9 +197,9 @@ function main() {
                         dataStor.sort(function (a, b) { return b.balance - a.balance; });
                         for (var _i = 0, dataStor_2 = dataStor; _i < dataStor_2.length; _i++) {
                             var i = dataStor_2[_i];
-                            fs.appendFileSync('logs.txt', "".concat(i.wallet, " ").concat(i.balance, "\n"));
+                            fs.appendFileSync('logs.txt', "".concat(i.wallet, " ").concat(i.balance, "$\n"));
                         }
-                        fs.appendFileSync('logs.txt', "Total$ ".concat(total));
+                        fs.appendFileSync('logs.txt', "Total$ ".concat(total, "$"));
                         process.exit(0);
                     });
                     fs.writeFileSync('logs.txt', '');
@@ -225,9 +225,9 @@ function main() {
                     dataStor.sort(function (a, b) { return b.balance - a.balance; });
                     for (_a = 0, dataStor_1 = dataStor; _a < dataStor_1.length; _a++) {
                         i = dataStor_1[_a];
-                        fs.appendFileSync('logs.txt', "".concat(i.wallet, " ").concat(i.balance, "\n"));
+                        fs.appendFileSync('logs.txt', "".concat(i.wallet, " ").concat(i.balance, "$\n"));
                     }
-                    fs.appendFileSync('logs.txt', "Total$ ".concat(total));
+                    fs.appendFileSync('logs.txt', "Total$ ".concat(total, "$"));
                     return [2 /*return*/];
             }
         });
