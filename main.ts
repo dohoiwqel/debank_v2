@@ -93,9 +93,9 @@ async function main() {
         fs.writeFileSync('logs.txt' ,'')
         dataStor.sort((a,b) => b.balance - a.balance)
         for(let i of dataStor) {
-            fs.appendFileSync('logs.txt', `${i.wallet} ${i.balance}\n`)
+            fs.appendFileSync('logs.txt', `${i.wallet} ${i.balance}$\n`)
         }
-        fs.appendFileSync('logs.txt', `Total$ ${total}`)
+        fs.appendFileSync('logs.txt', `Total$ ${total}$`)
         process.exit(0)
     })
 
@@ -114,10 +114,10 @@ async function main() {
     fs.writeFileSync('logs.txt' ,'')
     dataStor.sort((a,b) => b.balance - a.balance)
     for(let i of dataStor) {
-        fs.appendFileSync('logs.txt', `${i.wallet} ${i.balance}\n`)
+        fs.appendFileSync('logs.txt', `${i.wallet} ${i.balance}$\n`)
     }
 
-    fs.appendFileSync('logs.txt', `Total$ ${total}`)  
+    fs.appendFileSync('logs.txt', `Total$ ${total}$`)  
 }
 
 
